@@ -1,0 +1,13 @@
+coverage/
+docs/
+docs_src/
+src/
+.babelrc.js
+.eslintignore
+.eslintrc.js
+.gitignore
+.npmignore
+.travis.yml
+gulpfile.js
+jest.config.js
+text-privacy-converter-*.tgz

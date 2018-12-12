@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%=package.name %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="css/bundle.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300"
+      rel="stylesheet"
+    />
+    <meta property="og:title" content="<%=package.name %>" />
+    <meta property="og:description" content="<%=package.description %>" />
+    <meta property="og:image" content="https://m98.be/pic/og.png" />
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>text-<span class="effect">privacy</span>-converter</h1>
+        <p class="package-desc">
+          convert a text so as to protect privacy
+          <span class="effect">while keep format</span>.
+        </p>
+        <p>
+          <input
+            id="repl-line-input"
+            value="[type text here]ファミチキを食べて過ごす幸せな日々【毎日のディナー】"
+          />
+        </p>
+        <p id="repl-line-output"></p>
+      </header>
+      <article>
+        <section>
+          <h2>Getting started</h2>
+          <nav>
+            <ul>
+              <li>
+                <a href="https://www.npmjs.com/package/text-privacy-converter"
+                  >npm</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/mochiya98/text-privacy-converter"
+                  >github</a
+                >
+              </li>
+              <li>
+                <a href="./js/text-privacy-converter/index.js"
+                  >umdjs (for browser, etc)</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </section>
+        <section>
+          <h2>Note</h2>
+          <ul>
+            <li>optimized for speed</li>
+            <li>
+              IE11 needs
+              <a href="./js/polyfill-code-point.js">polyfill</a>
+              (String.fromCodePoint/String.prototype.codePointAt)
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Usage</h2>
+          <pre><code class="javascript hljs"><%-highlight("javascript", `const {privacyConvertEn, privacyConvertJa} = require("text-privacy-converter");
+//import {privacyConvertEn, privacyConvertJa} from "text-privacy-converter"
+console.log(privacyConvertJa("星空を眺めて"));//"場組わ鳥ござ"`).value %></code></pre>
+        </section>
+        <section>
+          <h2>REPL</h2>
+          <textarea id="repl-area-input">type text here!</textarea>
+          <p>
+            <input type="button" id="repl-area_convert-btn" value="convert!" />
+          </p>
+        </section>
+      </article>
+      <footer><small>(C)2018 YukimasaFunaoka(mochiya98)</small></footer>
+    </div>
+    <script src="js/polyfill-code-point.js"></script>
+    <script src="js/text-privacy-converter/index.js" async defer></script>
+    <script src="js/index.js" async defer></script>
+  </body>
+</html>
